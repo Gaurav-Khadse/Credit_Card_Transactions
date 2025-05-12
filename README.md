@@ -91,7 +91,7 @@ select * from credit_card_transactions;
 
 -  ### **`Top 5 Cities by Credit Card Spend`**
   
-Write a query to print top 5 cities with highest spends and their percentage contribution of total credit card spends?.
+1.Write a query to print top 5 cities with highest spends and their percentage contribution of total credit card spends?.
 
 ```sql
 
@@ -105,6 +105,16 @@ limit 5;
 
 ```
 ![Queston 1](https://github.com/user-attachments/assets/93b533d0-8383-475f-8fdd-98741bebf7d0)
+
+-  ### **`Highest Spend Month by Card Type`**
+-  ### **`Transaction Details at 1M Cumulative Spend by Card Type`**
+-  ### **`City with Lowest Gold Card Spend Percentage`**
+-  ### **`City, Highest, and Lowest Expense Type`**
+-  ### **`Female Spend Percentage by Expense Type`**
+-  ### **`Highest Month-over-Month Growth in Jan-2014`**
+-  ### **`City with Highest Weekend Spend Ratio`**
+-  ### **`City with Least Days to Reach 500th Transaction`**
+
 
 
 
