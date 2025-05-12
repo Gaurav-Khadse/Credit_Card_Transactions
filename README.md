@@ -91,7 +91,7 @@ select * from credit_card_transactions;
 
 -  ### **`Top 5 Cities by Credit Card Spend`**
   
-write a query to print top 5 cities with highest spends and their percentage contribution of total credit card spends?.
+Write a query to print top 5 cities with highest spends and their percentage contribution of total credit card spends?.
 
 ```sql
 
