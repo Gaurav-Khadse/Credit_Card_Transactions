@@ -110,11 +110,43 @@ limit 5;
 2. Write a query to print highest spend month and amount spent in that month for each card type?
 -  ### **`Transaction Details at 1M Cumulative Spend by Card Type`**
 3. Write a query to print the transaction details(all columns from the table) for each card type when it reaches a cumulative of 1000000 total spends(We should have 4 rows in the o/p one for each card type)
+```sql
+select * from(select *,
+rank () over(partition by card_type order by cum_sum asc) as rn
+ from (
+select * , 
+sum(amount)  over(partition by card_type order by transaction_date,transaction_id) as cum_sum
+from credit_card_transactions) as a
+where cum_sum > 1000000)as b
+where rn = 1;
+```
+![3 QUESTION](https://github.com/user-attachments/assets/ac09ec48-d2a4-419c-8130-d78d530afbab)
+ 
+
+
+
 -  ### **`City with Lowest Gold Card Spend Percentage`**
-4.write a query to find city which had lowest percentage spend for gold card type
+4.Write a query to find city which had lowest percentage spend for gold card type?
+
+```sql
+select city,
+sum(amount) as total_expense
+,sum(case when card_type = "Gold" then amount else 0 end ) as gold_spent
+,sum(case when card_type = "Gold" then amount else 0 end )/sum(amount)*100 as  percentage_contribution
+from credit_card_transactions
+group by city
+having sum(case when card_type = "Gold" then amount else 0 end ) >0
+order by percentage_contribution asc	
+LIMIT 1;
+```
+
+![4 QUESTION](https://github.com/user-attachments/assets/252c02c9-5b2b-4777-8778-36ee1cd27677)
+
+
+
 -  ### **`City, Highest, and Lowest Expense Type`**
-   
-5. write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
+   5. write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
+
 -  ### **`Female Spend Percentage by Expense Type`**
 6. write a query to find percentage contribution of spends by females for each expense type
 -  ### **`Highest Month-over-Month Growth in Jan-2014`**
