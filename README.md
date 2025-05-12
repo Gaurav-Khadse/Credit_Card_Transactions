@@ -1,5 +1,6 @@
-# Credit_Card_Transactions
+# Credit_Card_Transactions_Data_Analysis_SQL
 
+![image](https://github.com/user-attachments/assets/32b2b489-923a-44a6-8843-290c1648561d)
 
 ## 📑 Contents
 
@@ -11,9 +12,6 @@
 - [**📂 Data Source**](#-data-source)
 - [**🛠️ Skills Demonstrated**](#️-skills-demonstrated)
 
-
-
-![image](https://github.com/user-attachments/assets/32b2b489-923a-44a6-8843-290c1648561d)
 
 
 
