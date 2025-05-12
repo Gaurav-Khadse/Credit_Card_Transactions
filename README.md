@@ -89,3 +89,22 @@ select * from credit_card_transactions;
 
 ## 🔍 Analytical Insights
 
+-  ### **`Top 5 Cities by Credit Card Spend`**
+  
+write a query to print top 5 cities with highest spends and their percentage contribution of total credit card spends?.
+
+```sql
+
+with cte as(select sum(amount) as total_spent from credit_card_transactions)
+select  city ,sum(amount) as expense,total_spent,sum(amount)/total_spent *100 as percentage_contributation
+from credit_card_transactions
+cross join cte 
+group by city,total_spent
+order by expense desc
+limit 5;
+
+```
+![Queston 1](https://github.com/user-attachments/assets/93b533d0-8383-475f-8fdd-98741bebf7d0)
+
+
+
