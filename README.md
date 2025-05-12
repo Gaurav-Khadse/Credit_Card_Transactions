@@ -87,7 +87,11 @@ select * from gender;
 select * from amount;
 
 ```
+**Note:** The image displays only a partial view of the complete results due to screenshot limitations. For the full dataset and comprehensive tables, please execute these queries directly in your SQL environment or refer to the complete result exports available in this repository's data outputs folder.
+
+![Full Table ](https://github.com/user-attachments/assets/62701530-add0-4d70-aa96-a81fb2a66e84)
 
 
 
+## 🔍 Analytical Insights
 
