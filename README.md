@@ -107,14 +107,23 @@ limit 5;
 ![Queston 1](https://github.com/user-attachments/assets/93b533d0-8383-475f-8fdd-98741bebf7d0)
 
 -  ### **`Highest Spend Month by Card Type`**
+2. Write a query to print highest spend month and amount spent in that month for each card type?
 -  ### **`Transaction Details at 1M Cumulative Spend by Card Type`**
+3. Write a query to print the transaction details(all columns from the table) for each card type when it reaches a cumulative of 1000000 total spends(We should have 4 rows in the o/p one for each card type)
 -  ### **`City with Lowest Gold Card Spend Percentage`**
+4.write a query to find city which had lowest percentage spend for gold card type
 -  ### **`City, Highest, and Lowest Expense Type`**
+   
+5. write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
 -  ### **`Female Spend Percentage by Expense Type`**
+6. write a query to find percentage contribution of spends by females for each expense type
 -  ### **`Highest Month-over-Month Growth in Jan-2014`**
+  
+
+7. which card and expense type combination saw highest month over month growth in Jan-2014
 -  ### **`City with Highest Weekend Spend Ratio`**
+  
+8. during weekends which city has highest total spend to total no of transcations ratio  
 -  ### **`City with Least Days to Reach 500th Transaction`**
-
-
-
+9. which city took least number of days to reach its 500th transaction after the first transaction in that city
 
