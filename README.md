@@ -33,7 +33,7 @@ Don't forget to follow and star ⭐ the repository if you find it valuable.
 Tools Used🛠️:My Sql Workbench
 
 
-Data Set📂:[Spotify Dataset](https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india?resource=download)
+Data Set📂:[Credit Card Transactions Dataset](https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india?resource=download)
 
 ## 💾 Data Setup in SQL Workbench
 
