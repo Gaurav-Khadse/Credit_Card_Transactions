@@ -156,10 +156,12 @@ LIMIT 1;
 
 
 Query Explanation:
+
 This SQL query analyzes credit card transaction data to identify the city with the lowest percentage contribution of "Gold" card transactions to the overall spending. It achieves this in several key steps. First, the query aggregates transaction data at the city level using the GROUP BY clause, calculating the total expense (total_expense) for each city using the SUM(amount) function. Next, it applies a conditional aggregation to separately calculate the total spending by Gold card transactions using a CASE WHEN statement. This isolates the amount spent using Gold cards, storing the result as gold_spent.
 
 The query then computes the percentage contribution of Gold card spending to the overall spending in each city by dividing the Gold card spending by the total expense and multiplying by 100. This calculation is expressed as:
-percentage_contribution = gold_spent/total_expense × 100 
+percentage_contribution = gold_spent/total_expense × 100.
+
 ​To ensure that only cities with Gold card transactions are considered, the HAVING clause filters the data to retain only those cities where the Gold card spending is greater than zero.
 Finally, the query sorts the cities in ascending order of the percentage contribution of Gold card transactions using the ORDER BY percentage_contribution ASC clause. The LIMIT 1 statement restricts the output to a single city — the one with the lowest percentage contribution of Gold card spending to the overall expense.
 
