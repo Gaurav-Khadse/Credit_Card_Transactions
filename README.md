@@ -78,13 +78,7 @@ This step provided a clear understanding of the dataset and helped in structurin
 ```sql
 
 # Viewing the Data
-select * from transaction_id;
-select * from city;
-select * from transaction_date;
-select * from card_type;
-select * from exp_type;
-select * from gender;
-select * from amount;
+select * from credit_card_transactions;
 
 ```
 **Note:** The image displays only a partial view of the complete results due to screenshot limitations. For the full dataset and comprehensive tables, please execute these queries directly in your SQL environment or refer to the complete result exports available in this repository's data outputs folder.
