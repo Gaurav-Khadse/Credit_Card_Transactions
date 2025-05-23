@@ -199,12 +199,29 @@ This SQL query identifies, for each city, the expense type with the highest and 
 
 -  ### **`Female Spend Percentage by Expense Type`**
 6. write a query to find percentage contribution of spends by females for each expense type
--  ### **`Highest Month-over-Month Growth in Jan-2014`**
-  
 
-7. which card and expense type combination saw highest month over month growth in Jan-2014
+```sql
+select exp_type,sum(amount) as total_spend
+,sum(case when gender = 'F' then amount else 0 end) as female_spend
+,sum(case when gender = 'F' then amount else 0 end)/sum(amount)*100 as female_Percentage_contribution
+from credit_card_transactions
+group by exp_type
+order by female_Percentage_contribution;
+```
+
+![6](https://github.com/user-attachments/assets/969e2c71-c28c-4313-9df6-1456c3427759)
+
+Query Explanation:
+
+This SQL query analyzes credit card transactions to determine the total spending and the female spending contribution for each expense type. It starts by grouping the data by exp_type using the GROUP BY clause to perform aggregations for each category of expense. Within each expense type, it calculates three key metrics: (1) total_spend – the total amount spent using SUM(amount); (2) female_spend – the amount spent by female customers only, using a CASE WHEN condition that includes amount only when the gender is 'F', and assigns 0 otherwise; and (3) female_Percentage_contribution – the percentage of total spending that came from female customers, calculated by dividing female_spend by total_spend and multiplying by 100. The query finally orders the results in ascending order of female_Percentage_contribution to show which expense types had the least to most contribution from female customers, helping to identify consumer behavior trends by gender across different spending categories.
+
+-  ### **`Highest Month-over-Month Growth in Jan-2014`**
+  7. which card and expense type combination saw highest month over month growth in Jan-2014
+
+
+
+
 -  ### **`City with Highest Weekend Spend Ratio`**
-  
 8. during weekends which city has highest total spend to total no of transcations ratio  
 -  ### **`City with Least Days to Reach 500th Transaction`**
 9. which city took least number of days to reach its 500th transaction after the first transaction in that city
