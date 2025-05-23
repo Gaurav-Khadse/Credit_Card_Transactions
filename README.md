@@ -187,6 +187,7 @@ from cte2
 where highest_rn = 1 or lowest_rn = 1
 group by city;
 ```
+Note: The image displays only a partial view of the complete results due to screenshot limitations. For the full dataset and comprehensive tables, please execute these queries directly in your SQL environment or refer to the complete result exports available in this repository's data outputs folder.
 
 ![5](https://github.com/user-attachments/assets/f75c4782-ed96-47a5-ba4e-e108928c4563)
 
