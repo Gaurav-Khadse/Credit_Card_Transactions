@@ -240,7 +240,20 @@ This SQL query analyzes credit card transactions to determine the total spending
 
 
 -  ### **`City with Highest Weekend Spend Ratio`**
-8. during weekends which city has highest total spend to total no of transcations ratio  
+8. during weekends which city has highest total spend to total no of transcations ratio?
+```sql
+SELECT city,sum(amount)*1.0/count(*) as ratio
+from credit_card_transactions
+where datepart(weekday,transaction_date)in(1,7) 
+group by city 
+order by ratio desc;
+```
+Query Explanation:
+
+This SQL query analyzes credit card transaction data to calculate the average transaction amount on weekends for each city, and then ranks the cities based on this value. It starts by filtering the data using the WHERE clause to include only transactions that occurred on weekends—specifically on Sunday (1) and Saturday (7), as determined by DATEPART(weekday, transaction_date). Then, using GROUP BY city, the query groups all weekend transactions by city. For each city, it calculates the average transaction amount by dividing the total sum of amount by the total number of transactions (COUNT(*)). To ensure the result is in decimal form (not integer), the total amount is multiplied by 1.0. This average is labeled as ratio. Finally, the cities are sorted in descending order of this ratio using ORDER BY ratio DESC, so the output shows the cities where people spend the most per transaction on weekends at the top. This insight can help identify regions with higher weekend spending behavior.
+
+
+
 -  ### **`City with Least Days to Reach 500th Transaction`**
 9. which city took least number of days to reach its 500th transaction after the first transaction in that city
 
