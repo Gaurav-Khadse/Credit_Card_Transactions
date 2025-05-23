@@ -168,7 +168,32 @@ The result provides insights into identifying the city where the Gold card spend
 
 
 -  ### **`City, Highest, and Lowest Expense Type`**
-   5. write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
+5. write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
+```sql
+with cte as(select city,exp_type,sum(amount) as total_amount
+from credit_card_transactions
+group by city,exp_type)
+
+,cte2 as(select *,
+rank()over(partition by city order by total_amount desc) as highest_rn
+,rank()over(partition by city order by total_amount) as lowest_rn
+from cte
+)
+
+select city,
+max(case when highest_rn = 1 then exp_type end )as  highest_expense_type
+,min(case when lowest_rn= 1 then exp_type end )as  lowest_expense_type
+from cte2
+where highest_rn = 1 or lowest_rn = 1
+group by city;
+```
+
+![5](https://github.com/user-attachments/assets/f75c4782-ed96-47a5-ba4e-e108928c4563)
+
+
+
+
+
 
 -  ### **`Female Spend Percentage by Expense Type`**
 6. write a query to find percentage contribution of spends by females for each expense type
