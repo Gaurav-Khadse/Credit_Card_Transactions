@@ -124,6 +124,9 @@ select * from( select *,
 rank()over(partition by card_type order by monthly_expense desc) as rn from cte) as a
 where rn = 1;
 ```
+Query Explanation:
+
+This SQL query identifies the month with the highest total spending for each card type based on credit card transaction data. It begins by using a Common Table Expression (CTE) named cte, where the transaction data is grouped by card_type, the year, and the month (extracted using the DATEPART function). Within each group, it calculates the total monthly expense using SUM(amount). This results in a summary table showing total spending per card type for each month. In the main query, a ranking function RANK() is applied using a window partitioned by card_type and ordered by monthly_expense in descending order, assigning rank 1 to the month with the highest spending for each card type. This step is performed within a subquery aliased as a. Finally, the outer query filters the data to return only the rows where the rank is 1 (WHERE rn = 1), effectively selecting the month and year of peak spending for each card type. This analysis is useful for identifying seasonal or promotional performance patterns for different card types.
 
 
 -  ### **`Transaction Details at 1M Cumulative Spend by Card Type`**
