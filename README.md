@@ -190,8 +190,9 @@ group by city;
 
 ![5](https://github.com/user-attachments/assets/f75c4782-ed96-47a5-ba4e-e108928c4563)
 
+Query Explanation:
 
-
+This SQL query identifies, for each city, the expense type with the highest and lowest total spending based on credit card transactions. It begins by using a Common Table Expression (CTE) named cte to aggregate the total amount spent (SUM(amount)) for each combination of city and expense type by grouping the data on city and exp_type. In the next CTE, cte2, it ranks each expense type within a city using the RANK() window function — highest_rn ranks expense types in descending order of spending (so the highest gets rank 1), and lowest_rn ranks them in ascending order (lowest gets rank 1). These rankings allow identification of both the most and least spent-on categories in each city. The final SELECT statement filters rows where either the highest or lowest rank is 1, and then, using conditional aggregation (CASE WHEN inside MAX and MIN), it extracts the names of the expense types with the highest and lowest total spending for each city. The result provides a clear summary of consumer spending behavior across cities, highlighting which expense categories dominate or lag behind in each location.
 
 
 
