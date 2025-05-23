@@ -256,4 +256,21 @@ This SQL query analyzes credit card transaction data to calculate the average tr
 
 -  ### **`City with Least Days to Reach 500th Transaction`**
 9. which city took least number of days to reach its 500th transaction after the first transaction in that city
+```sql
+with cte as(select * 
+,row_number() over(partition by city order by transaction_date,transaction_id) as rn
+from credit_card_transactions)
 
+select city
+,min(transaction_date) as first_transaction
+,max(transaction_date) as last_transaction
+,datediff(day,(transaction_date),max(transaction_date)) as days_to_500 from cte
+where rn in (1,500)
+group by city 
+having count(*) = 2
+order by days_to_500 asc;
+```
+
+Query Explanation:
+
+This SQL query calculates how many days it took each city to reach its 500th credit card transaction. It begins by using a Common Table Expression (CTE) to assign a unique row number to each transaction within each city using the ROW_NUMBER() function, ordered by transaction date and transaction ID. This effectively ranks all transactions chronologically for every city. The main query then filters this data to retain only the rows where the row number is 1 (the first transaction) or 500 (the 500th transaction). It groups the results by city and uses the HAVING COUNT(*) = 2 clause to ensure only cities that have at least 500 transactions are considered. For each such city, the query calculates the date of the first transaction (MIN(transaction_date)) and the 500th transaction (MAX(transaction_date)), and then uses the DATEDIFF() function to compute the difference in days between them, representing how many days it took the city to reach its 500th transaction. Finally, the results are sorted in ascending order of this duration (days_to_500), showing which cities achieved high transaction volume in the shortest time. This analysis is useful for identifying cities with rapid growth or high engagement in credit card usage.
