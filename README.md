@@ -111,6 +111,21 @@ The query outputs the top 5 cities with the highest credit card spending, their 
 
 -  ### **`Highest Spend Month by Card Type`**
 2. Write a query to print highest spend month and amount spent in that month for each card type?
+
+```sql
+with cte as(
+select card_type,datepart(year,transaction_date) as yo 
+,datepart(month,transaction_date) as mo 
+,sum(amount) as monthly_expense
+from credit_card_transactions
+group by card_type,datepart(year,transaction_date),datepart(month,transaction_date))
+
+select * from( select *,
+rank()over(partition by card_type order by monthly_expense desc) as rn from cte) as a
+where rn = 1;
+```
+
+
 -  ### **`Transaction Details at 1M Cumulative Spend by Card Type`**
 3. Write a query to print the transaction details(all columns from the table) for each card type when it reaches a cumulative of 1000000 total spends(We should have 4 rows in the o/p one for each card type)
 ```sql
