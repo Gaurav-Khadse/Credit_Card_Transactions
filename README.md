@@ -292,28 +292,28 @@ This SQL query calculates how many days it took each city to reach its 500th cre
 🔍 Data Filtering
 Used WHERE clauses to filter transactions by city, card type, or date range.
 
-📊 Aggregation
+- Aggregation
 Applied SUM() and COUNT() to calculate total and count of transactions across different dimensions.
 
-🔽 Sorting Results
+- Sorting Results
 Used ORDER BY to arrange cities or card types by total spending or transaction volume.
 
-📅 Date-Based Analysis
+- Date-Based Analysis
 Used MONTH() and YEAR() functions to identify monthly and yearly trends in transaction volume and value.
 
-🏙️ City-Wise Insights
+- City-Wise Insights
 Grouped data by city to analyze spending behavior and transaction trends across locations.
 
-💳 Card Type Analysis
+- Card Type Analysis
 Grouped by card_type to understand spending distribution across different cardholders.
 
-📈 Trend Identification
+- Trend Identification
 Combined filtering, grouping, and sorting to identify top-performing cities and card types by expenditure.
 
-🔁 Aliasing
+- Aliasing
 Used AS to rename columns and improve readability of query outputs.
 
-📌 Ranking and Comparison
+- Ranking and Comparison
 Used ROW_NUMBER() and other window functions to rank cities or card types by expenditure.
 
 
