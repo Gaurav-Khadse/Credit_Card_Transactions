@@ -322,22 +322,67 @@ Used ROW_NUMBER() and other window functions to rank cities or card types by exp
 
 Data Set📂:[Credit Card Transactions Dataset](https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india?resource=download)
 
-transaction_id: Unique identifier for each credit card transaction.
+- transaction_id: Unique identifier for each credit card transaction.
 
-city: Indicates the city where the transaction occurred (e.g., Delhi, Greater Mumbai, Bengaluru, Ahmedabad).
+- city: Indicates the city where the transaction occurred (e.g., Delhi, Greater Mumbai, Bengaluru, Ahmedabad).
 
-transaction_date: The date on which the transaction was made, formatted as DD-MMM-YY.
+- transaction_date: The date on which the transaction was made, formatted as DD-MMM-YY.
 
-card_type: Specifies the type of credit card used — Gold, Silver, Platinum, or Signature.
+- card_type: Specifies the type of credit card used — Gold, Silver, Platinum, or Signature.
 
-exp_type: Category of expenditure. In this dataset, all transactions fall under the 'Bills' category.
+- exp_type: Category of expenditure. In this dataset, all transactions fall under the 'Bills' category.
 
-gender: Gender of the cardholder. This dataset includes only female cardholders (represented as 'F').
+- gender: Gender of the cardholder. This dataset includes only female cardholders (represented as 'F').
 
-amount: The value of the transaction in Indian Rupees (INR).
-
-
+- amount: The value of the transaction in Indian Rupees (INR).
 
 
 
+
+## 🛠️ Skills Demonstrated
+
+- SELECT Statements
+Used SELECT *, SELECT column_name for basic data retrieval and column-specific queries.
+
+- Filtering with WHERE Clause
+Filtered records with conditions like WHERE city = 'Delhi' and WHERE card_type = 'Gold'.
+
+- Sorting with ORDER BY
+Sorted data using ORDER BY amount DESC, ORDER BY transaction_date, and more for insights.
+
+- Aggregation Functions
+Applied SUM(), COUNT(), AVG() to analyze total spends, transaction counts, and averages by city, card type, or expense type.
+
+- GROUP BY Clause
+Grouped data by city, card_type, exp_type, MONTH(transaction_date) for grouped insights.
+
+- JOINs (CROSS JOIN)
+Used CROSS JOIN with a CTE to calculate percentage contribution of each city to the total spend.
+
+- Common Table Expressions (CTEs)
+Created modular and readable queries using WITH clause to calculate ranks, expenses, and growth across partitions.
+
+- Window Functions
+Implemented ROW_NUMBER() and RANK() with PARTITION BY and ORDER BY to find cumulative spending points, highest/lowest ranks, and top-performing groups.
+
+- Aliases (AS)
+Used column aliases like AS monthly_expense, AS percentage_contribution, AS cum_sum for readability.
+
+- Date Functions
+Used MONTH(), YEAR(), DATEDIFF(), DATEPART() to analyze monthly trends, transaction gaps, and weekdays/weekends.
+
+- Conditional Aggregation (CASE WHEN)
+Used CASE WHEN inside aggregation functions to compute conditional metrics like gender-based spends or expense-type contributions.
+
+- Data Cleaning with ALTER TABLE
+Renamed and reformatted columns (RENAME COLUMN, MODIFY COLUMN) to standardize data structure.
+
+- Subqueries and Nested Queries
+Structured multi-step logic using subqueries to determine top cities, cumulative spending milestones, and transaction milestones.
+
+- LIMIT Clause
+Restricted output to top entries using LIMIT 1, LIMIT 5 to identify key records such as top cities or top transactions.
+
+- INSERT Statements
+Performed INSERT INTO to test custom records for validation and debugging purposes.
 
