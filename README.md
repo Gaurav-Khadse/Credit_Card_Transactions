@@ -289,7 +289,7 @@ This SQL query calculates how many days it took each city to reach its 500th cre
 
 
 
-🔍 Data Filtering
+- Data Filtering
 Used WHERE clauses to filter transactions by city, card type, or date range.
 
 - Aggregation
