@@ -318,7 +318,23 @@ Used ROW_NUMBER() and other window functions to rank cities or card types by exp
 
 
 
+## 📂 Data Source
 
+Data Set📂:[Credit Card Transactions Dataset](https://www.kaggle.com/datasets/thedevastator/analyzing-credit-card-spending-habits-in-india?resource=download)
+
+transaction_id: Unique identifier for each credit card transaction.
+
+city: Indicates the city where the transaction occurred (e.g., Delhi, Greater Mumbai, Bengaluru, Ahmedabad).
+
+transaction_date: The date on which the transaction was made, formatted as DD-MMM-YY.
+
+card_type: Specifies the type of credit card used — Gold, Silver, Platinum, or Signature.
+
+exp_type: Category of expenditure. In this dataset, all transactions fall under the 'Bills' category.
+
+gender: Gender of the cardholder. This dataset includes only female cardholders (represented as 'F').
+
+amount: The value of the transaction in Indian Rupees (INR).
 
 
 
