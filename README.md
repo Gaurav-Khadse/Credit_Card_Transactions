@@ -274,3 +274,54 @@ order by days_to_500 asc;
 Query Explanation:
 
 This SQL query calculates how many days it took each city to reach its 500th credit card transaction. It begins by using a Common Table Expression (CTE) to assign a unique row number to each transaction within each city using the ROW_NUMBER() function, ordered by transaction date and transaction ID. This effectively ranks all transactions chronologically for every city. The main query then filters this data to retain only the rows where the row number is 1 (the first transaction) or 500 (the 500th transaction). It groups the results by city and uses the HAVING COUNT(*) = 2 clause to ensure only cities that have at least 500 transactions are considered. For each such city, the query calculates the date of the first transaction (MIN(transaction_date)) and the 500th transaction (MAX(transaction_date)), and then uses the DATEDIFF() function to compute the difference in days between them, representing how many days it took the city to reach its 500th transaction. Finally, the results are sorted in ascending order of this duration (days_to_500), showing which cities achieved high transaction volume in the shortest time. This analysis is useful for identifying cities with rapid growth or high engagement in credit card usage.
+
+
+
+
+
+
+
+
+
+
+## ⚙️ SQL Techniques
+
+
+
+
+🔍 Data Filtering
+Used WHERE clauses to filter transactions by city, card type, or date range.
+
+📊 Aggregation
+Applied SUM() and COUNT() to calculate total and count of transactions across different dimensions.
+
+🔽 Sorting Results
+Used ORDER BY to arrange cities or card types by total spending or transaction volume.
+
+📅 Date-Based Analysis
+Used MONTH() and YEAR() functions to identify monthly and yearly trends in transaction volume and value.
+
+🏙️ City-Wise Insights
+Grouped data by city to analyze spending behavior and transaction trends across locations.
+
+💳 Card Type Analysis
+Grouped by card_type to understand spending distribution across different cardholders.
+
+📈 Trend Identification
+Combined filtering, grouping, and sorting to identify top-performing cities and card types by expenditure.
+
+🔁 Aliasing
+Used AS to rename columns and improve readability of query outputs.
+
+📌 Ranking and Comparison
+Used ROW_NUMBER() and other window functions to rank cities or card types by expenditure.
+
+
+
+
+
+
+
+
+
+
